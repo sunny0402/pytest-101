@@ -20,4 +20,5 @@ def test_enviroment_is_dev(app_config):
     port = app_config.app_port
     assert base_url == 'https://mydev-env.com'
     assert port == 8080
+    #Could do: driver.get("base_url")
 

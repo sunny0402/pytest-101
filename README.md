@@ -124,3 +124,19 @@ def test_enviroment_is_qa(env):
 def test_enviroment_is_dev(env):
     assert env == 'dev'
 ```
+
+Decorators
+
+First class functions allow us to treat functions as objects.
+Pass functions as arguments, return function and assign functions to variables.
+A decorator is a function which takes another function as an argumnet.
+
+```
+def decorator_function(original_function):
+    def wrapper_function():
+        return original_function()
+    return wrapper_function
+
+# Modify original function by editing the wrapper.
+# That way do not have to alter original functio.
+```
