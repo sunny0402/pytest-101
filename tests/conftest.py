@@ -18,9 +18,10 @@ def env(request):
 
 
 @fixture(scope='session')
-# Fixture can use a fixture
+# Fixture can use another fixture. In this case env.
+# Env is whatever we pass arg we pass after --env
 def app_config(env):
-    cfg = Config(env)
+    cfg = Config(env) #want to build a config object with env fixture
     return cfg
 
 
