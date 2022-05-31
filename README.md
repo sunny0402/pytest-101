@@ -1,60 +1,27 @@
 ## Notes
 
-Review other branches for test enviroment configuration. And test parametrization for data driven test set up.
+Unit Testing. No dependecies. A small unit of code like a function.
+
+To install module in tests folder - Tox.
+
+But here simply:
 
 ```
-pytest -v
-pytest -m engine
-
-pytest -s #-s show standard out
-
+# from project root directort ... same level as README.md setup.py
+ pip install .
 ```
 
-Test Searching and Test Tagging
+To ensure in virtual enviroment:
 
 ```
-from pytest import mark
-
-@mark.smoke
-@mark.engine
+pip list
 
 ```
 
-Fixtures:
+Give access to titlecase module, so that can perform unit tests.
 
-Any fixture created in conftest becomes available in that direcotry and any below it.
-
-```
-@fixture(scope=function) #e.e. One browser object per function
-@fixture(scope=session) #i.e One browser for all tests
-```
-
-```
-conftest.py
-
-from pytest import fixture
-from selenium import webdriver
-
-@fixture(scope='function')
-def chrome_browser():
-    browser = webdriver.Chrome()
-    #return browser
-
-    yield browser
-
-    #Teardown
-    print("I am tearing down this browser!")
-
-```
-
-Reporting
-
-```
-pip install pytest-html
-
-pytest --html="results.html"
-
-#load xml into Jenkins
-pytest --junitxml="results.xml"
-
-```
+1. Launch pytest from root directory. Call the pytest module. Look in the tests direcotry for pytest.
+   python -m pytest tests
+2. Extended mode,aka point to source code, aka fake an install.
+   From root directory: pip install -e .
+3. TOX
