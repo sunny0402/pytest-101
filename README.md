@@ -1,5 +1,7 @@
 ## Notes
 
+Review other branches for test enviroment configuration. And test parametrization for data driven test set up.
+
 ```
 pytest -v
 pytest -m engine
