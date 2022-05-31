@@ -1,7 +1,7 @@
 ## Notes
 
-Parametrize on the fly.
-Parametrize for different browsers.
-Data driven tests.
+Parametrize on the fly. Meaning within a test.
+Parametrize for different browsers. Browser automation.
+Parametrize for data driven tests. Parametrize at fixture level and pass to test.
 
-putest -v -s
+pytest -v -s
